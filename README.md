@@ -19,4 +19,6 @@
 코드 비하인드 : C#
 
 ### 실행 화면
+![메인](https://user-images.githubusercontent.com/101550112/161671994-b0e94f98-4e37-455f-af92-4700bc6e07d5.png)
 
+프로그램 실행시 기본적으로 나오는 화면입니다.
