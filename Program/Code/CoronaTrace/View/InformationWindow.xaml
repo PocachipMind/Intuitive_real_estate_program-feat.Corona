@@ -1,0 +1,227 @@
+﻿<Window x:Class="CoronaTrace.View.InformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoronaTrace.View"
+        xmlns:vm="clr-namespace:CoronaTrace.ViewModel"
+        xmlns:cv="clr-namespace:CoronaTrace.ViewModel.Converter"
+        mc:Ignorable="d"
+        Title="RoomInformation" Height="450" Width="600" ResizeMode="NoResize" Icon="/Icon.ico">
+    <Window.Resources>
+        <vm:Interior1VM x:Key="in1vm"/>
+        <vm:Interior2VM x:Key="in2vm"/>
+        <cv:FurnitureToImageConverter x:Key="FtoIConverter"/>
+        <cv:CLtoCBConverter x:Key="CLtoCBConverter"/>
+        <cv:DMtoSMConverter x:Key="DMtoSMConverter"/>
+        <cv:IRtoSRConverter x:Key="IRtoSRConverter"/>
+        <cv:SStoLSConverter x:Key="SStoLSConverter"/>
+        <cv:STtoLTConverter x:Key="STtoLTConverter"/>
+        <cv:SPtoLPConverter x:Key="SPtoLPConverter"/>
+        <cv:SIDtoLIDConverter x:Key="SIDtoLIDConverter"/>
+    </Window.Resources>
+    <Grid >
+        <TabControl>
+            <!-- 데이터 컨텍스트는 InformationWindowVM이야 -->
+            <TabItem Header="정보">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Border BorderBrush="Gray" BorderThickness="5" CornerRadius="20">
+                        <StackPanel Margin="10"
+                                DataContext="{Binding Path=House}">
+                            <WrapPanel HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding Path=item.전용면적_m2, Converter={StaticResource DMtoSMConverter}}" Style="{DynamicResource Core}" />
+                                <TextBlock Text="{Binding Path=item.보증금액, Converter={StaticResource IRtoSRConverter}}" Style="{DynamicResource Core}"/>
+                                <TextBlock Text="{Binding Path=item.월세금액}" Style="{DynamicResource Core}"/>
+                                <TextBlock Text="{Binding Path=item.service_type, Converter={StaticResource SStoLSConverter}}" Style="{DynamicResource Core}"/>
+                            </WrapPanel>
+                            <TextBlock Text="{Binding Path=item.item_id, Converter={StaticResource SIDtoLIDConverter}}" FontWeight="Bold" Margin="5" HorizontalAlignment="Center"/>
+                            <Label BorderBrush="Gray" BorderThickness="0,1,0,0" />
+                            <TextBlock Text="{Binding Path=item.address}" Margin="5" />
+                            <TextBlock Text="{Binding Path=agent.agent_intro}" Margin="5" TextWrapping="Wrap"/>
+                            <Label BorderBrush="Gray" BorderThickness="0,1,0,0" />
+                            <Grid  Height="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="RoomView" Grid.Column="1" Source="{Binding Path=ImageView}" />
+                                <Button x:Name="LeftImageButton" Margin="2" Grid.Column="0" Content="←" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding ChangeImageViewCommand}" CommandParameter="←" Height="60" Width="60"/>
+                                <Button x:Name="RightImageButton" Margin="2" Grid.Column="3" Content="→" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding ChangeImageViewCommand}" CommandParameter="→" Height="60" Width="60"/>
+                            </Grid>
+
+                            <TextBlock Text="{Binding Path=item.description}" Margin="5" TextWrapping="Wrap"/>
+                            <Label BorderBrush="Gray" BorderThickness="0,1,0,0" />
+                            <TextBlock Text="{Binding Path=agent.agent_intro}" TextWrapping="Wrap"/>
+                            <WrapPanel HorizontalAlignment="Center" Margin="0,10,0,0">
+                                <TextBlock Text="{Binding Path=agent.agent_title, Converter={StaticResource STtoLTConverter}}" Style="{DynamicResource AgentStyle}" Margin="5"/>
+                                <TextBlock Text="{Binding Path=agent.agent_phone, Converter={StaticResource SPtoLPConverter}}" Style="{DynamicResource AgentStyle}" Margin="5"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </Border>
+                </ScrollViewer >
+            </TabItem>
+            <TabItem Header="인테리어" DataContext="{StaticResource in1vm}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="2*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="0" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button Margin="2" Grid.Column="0" Content="↑" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding MoveImageCommand }" CommandParameter="↑"/>
+                        <Button Margin="2" Grid.Column="1" Content="↓" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding MoveImageCommand}" CommandParameter="↓"/>
+                        <Button Margin="2" Padding="10" Grid.Column="2" Content="→" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding MoveImageCommand}" CommandParameter="→"/>
+                        <Button Margin="2" Grid.Column="3" Content="←" FontWeight="Bold" FontSize="20" Style="{DynamicResource ButtonStyle}" Command="{Binding MoveImageCommand}" CommandParameter="←"/>
+                    </Grid>
+
+                    <Image Source="{Binding ElementName=RoomView, Path=Source}"  Grid.Row="1" Grid.RowSpan="2" Stretch="Fill"/>
+                    <Canvas Grid.Row="1" Grid.RowSpan="2">
+                        <Image x:Name="InterierImage" Source="{Binding CurImage}" Width="{Binding ImageWidth}" Height="{Binding ImageHeight}" Canvas.Left="{Binding ImageCanvasLeft}" Canvas.Top="{Binding ImageCanvasTop}" Stretch="Fill"/>
+                    </Canvas>
+
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="5"
+                               Text="사진 기준 10cm"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               FontSize="15"/>
+
+                    <Grid Grid.Row="1" Grid.Column="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="14*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding LenSource}" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+                        <RadioButton Grid.Row="1" Grid.Column="1" Command="{Binding SelectLengthCommand}" CommandParameter="one"/>
+                        <RadioButton Grid.Row="1" Grid.Column="2" Command="{Binding SelectLengthCommand}" CommandParameter="two"/>
+                        <RadioButton Grid.Row="1" Grid.Column="3" Command="{Binding SelectLengthCommand}" CommandParameter="three"/>
+
+                        <DockPanel Grid.Row="3" Grid.ColumnSpan="4">
+                            <TextBlock Text="가구" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                            <ComboBox x:Name="SelFurniture" Text="" DockPanel.Dock="Right" Margin="5" SelectedIndex="{Binding CurSelectedIndex}">
+                                <ComboBoxItem Content="냉장고"/>
+                                <ComboBoxItem Content="책상"/>
+                            </ComboBox>
+                        </DockPanel>
+                        <DockPanel Grid.Row="4" Grid.ColumnSpan="4">
+                            <TextBlock Text="이미지" DockPanel.Dock="Top"/>
+                            <Image x:Name="Preview" Source="{Binding ElementName=SelFurniture, Path=SelectedIndex,
+                                   Converter={StaticResource FtoIConverter}}"
+                                   Stretch="Uniform"/>
+                        </DockPanel>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DockPanel Grid.Row="0">
+                            <TextBlock Text="가로" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                            <TextBox Text="{Binding Path=ImageWidth}" DockPanel.Dock="Right" Margin="5"/>
+                        </DockPanel>
+                        <DockPanel Grid.Row="1">
+                            <TextBlock Text="높이" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                            <TextBox Text="{Binding Path=ImageHeight}" DockPanel.Dock="Right" Margin="5"/>
+                        </DockPanel>
+                        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                            <Button Content=" ← " Margin="5" Command="{Binding ElementName=LeftImageButton, Path=Command}" CommandParameter="{Binding ElementName=LeftImageButton, Path=CommandParameter}"/>
+                            <Button Content=" → " Margin="5" Command="{Binding ElementName=RightImageButton, Path=Command}" CommandParameter="{Binding ElementName=RightImageButton, Path=CommandParameter}"/>
+
+                        </StackPanel>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="mm" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="mm" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Command="{Binding ReverseButtonCommand}" CommandParameter="{Binding ElementName=InterierImage, Path=Source}">
+                            <Image Source="/View/Image/reverse.png"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="인테리어" DataContext="{StaticResource in2vm}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/View/Image/sample house.jpg" Grid.Row="1" Grid.RowSpan="7" Grid.ColumnSpan="6" Grid.Column ="1" Stretch="Fill"/>
+                    <Canvas Grid.Row="1" Grid.RowSpan="7" Grid.ColumnSpan="6" Grid.Column ="1">
+                        <Image Source="{Binding CurImage}" Width="{Binding ChangedWidth}" Height="{Binding ChangedHeight}" Canvas.Left="{Binding Path=ImageLocation}" Canvas.Bottom="{Binding Path=ImageLocation, Converter={StaticResource CLtoCBConverter}}" Stretch="Fill" />
+                    </Canvas>
+
+                    <ComboBox x:Name="SelFurniture2" Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="3" Margin="10,6" SelectedIndex="{Binding CurSelectedIndex}">
+                        <ComboBoxItem Content="냉장고"/>
+                        <ComboBoxItem Content="책상"/>
+                    </ComboBox>
+                    <Image Grid.Row="3" Grid.RowSpan="3" Grid.Column="7" Grid.ColumnSpan="3"  Source="{Binding ElementName=SelFurniture2, Path=SelectedIndex,
+                                   Converter={StaticResource FtoIConverter}}"/>
+
+
+                    <Slider Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="6" Minimum="-42"  Maximum="346" Value="{Binding ImageLocation}"/>
+
+                    <DockPanel Grid.Row="7" Grid.Column="7"  Grid.ColumnSpan="7">
+                        <TextBlock Text="가로" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="mm" VerticalAlignment="Center" HorizontalAlignment="Center" DockPanel.Dock="Right"/>
+                        <TextBox Text="{Binding Path=ImageWidth, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                    </DockPanel>
+                    <DockPanel Grid.Row="8" Grid.Column="7"  Grid.ColumnSpan="7">
+                        <TextBlock Text="세로" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="mm" VerticalAlignment="Center" HorizontalAlignment="Center" DockPanel.Dock="Right"/>
+                        <TextBox Text="{Binding Path=ImageHeight, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                    </DockPanel>
+
+
+                </Grid>
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
