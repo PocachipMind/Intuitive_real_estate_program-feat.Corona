@@ -55,3 +55,9 @@
 이 창에선 탭을 통해 정보 및 인테리어를 해볼수 있습니다.
 
 ![창2](https://user-images.githubusercontent.com/101550112/161676563-f2df7259-35c8-48f3-a82d-30bf77d5b024.png)
+
+<br>
+
+## 대략적 프로그램 구조
+
+![apdls](https://user-images.githubusercontent.com/101550112/161677083-d89679dc-8bd8-4d39-add2-0581c497d409.png)
