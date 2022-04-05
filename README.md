@@ -24,3 +24,6 @@
 프로그램 실행시 기본적으로 나오는 화면입니다.
 
 ![메인 - 복사본](https://user-images.githubusercontent.com/101550112/161672465-403e763d-3fd1-4276-befe-4b48137b7e84.png)
+
+
+① : 
