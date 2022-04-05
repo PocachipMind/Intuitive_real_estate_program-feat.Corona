@@ -48,4 +48,10 @@
 <br>
 
 카테고리 버튼에서, 집카테고리를 활성화 시킨후 클릭하게 되면 다음과 같은 창이 뜨게됩니다.
+
 ![창](https://user-images.githubusercontent.com/101550112/161676213-1e096d4d-b59a-46d6-974e-eb29127a07ec.png)
+
+
+이 창에선 탭을 통해 정보 및 인테리어를 해볼수 있습니다.
+
+![창2](https://user-images.githubusercontent.com/101550112/161676563-f2df7259-35c8-48f3-a82d-30bf77d5b024.png)
