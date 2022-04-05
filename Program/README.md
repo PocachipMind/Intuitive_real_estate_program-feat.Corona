@@ -44,3 +44,5 @@ CoronaTrace - HTML.zip 파일을 다운 받은 후 압축을 해제하고 프로
 ## Step 4. 실행
 
 Visual Studio 내에서 컨트롤 + F5를 통해 실행합니다.
+
+![프로그램11](https://user-images.githubusercontent.com/101550112/161691644-2a3f8a1d-b746-4964-9dde-3909414e56f6.png)
