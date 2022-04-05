@@ -2,7 +2,7 @@
 
 2021년 1학기 윈도우즈 프로그래밍을 하며 제작한 프로그램.
 
-<img src="https://user-images.githubusercontent.com/101550112/161691644-2a3f8a1d-b746-4964-9dde-3909414e56f6.png" width="200" height="400"/>
+<img src="https://user-images.githubusercontent.com/101550112/161691644-2a3f8a1d-b746-4964-9dde-3909414e56f6.png" width="60%" height="60%"/>
 
 전체 프로그램 설명 URL : https://youtu.be/2JbaxIU_uhc
 
