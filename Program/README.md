@@ -35,4 +35,4 @@ CoronaTrace - HTML.zip 파일을 다운 받은 후 압축을 해제하고 프로
 
 ## Step 4. 실행
 
-실행합니다.
+Visual Studio 내에서 컨트롤 + F5를 통해 실행합니다.
