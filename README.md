@@ -44,11 +44,12 @@
 
 프로그램 실행시 기본적으로 나오는 화면입니다.
 
-![메인](https://user-images.githubusercontent.com/101550112/161671994-b0e94f98-4e37-455f-af92-4700bc6e07d5.png)
+
+<img src="https://user-images.githubusercontent.com/101550112/161671994-b0e94f98-4e37-455f-af92-4700bc6e07d5.png" width="80%" height="80%"/>
 
 <br>
 
-![메인 - 복사본](https://user-images.githubusercontent.com/101550112/161672465-403e763d-3fd1-4276-befe-4b48137b7e84.png)
+<img src="https://user-images.githubusercontent.com/101550112/161672465-403e763d-3fd1-4276-befe-4b48137b7e84.png" width="80%" height="80%"/>
 
 
 #### ① : 검색 기능. 원하는 카테고리와 코로나 위험도를 설정하여 검색.
