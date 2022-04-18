@@ -28,11 +28,13 @@
 <br>
 
 ## 기술
-구현 : Visual Studio
+구현 도구 : Visual Studio
 
 디자인 코드 : XAML ( WPF )
 
 코드 비하인드 : C#
+
+지도 코드 : HTML
 
 <br>
 
