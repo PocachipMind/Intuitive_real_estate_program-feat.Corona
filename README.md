@@ -37,7 +37,8 @@
 지도 코드 : HTML
 
 <br>
-
+![이미지](https://user-images.githubusercontent.com/101550112/165713639-bfdcb931-625f-43ff-8ae9-fe957d6926d0.png)
+<br>
 ## 실행 화면
 
 ### ※ 자세한 작동기전은 영상을 참고해주세요! ( https://youtu.be/2JbaxIU_uhc )
