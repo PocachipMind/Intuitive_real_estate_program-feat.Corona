@@ -54,9 +54,15 @@ CoronaTrace - HTML.zip 파일을 다운 받은 후 압축을 해제하고 프로
 API를 사용하기 위해 서버를 하나 개설합니다. 그리고 그 서버에서 카카오 API를 사용할 수 있도록 사이트 도메인을 추가해줍니다.
 
 저는 서버를 개설하는데 다음과 같은 사이트에 도움을 받았습니다.
+
+
 도움을 받은 사이트 : https://tiiny.host/manage
 
+![앱설정1](https://user-images.githubusercontent.com/101550112/175476912-05a6ba3b-f20c-4b32-9df7-a12ea72d6d81.png)
 
+![앱설정2](https://user-images.githubusercontent.com/101550112/175476915-cdf900cb-cc90-4f69-a781-886cd8f57e45.png)
+
+![앱설정3](https://user-images.githubusercontent.com/101550112/175476895-e7de5a5e-d01a-4ee8-a254-711626afcbef.png)
 
 <br>
 
