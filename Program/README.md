@@ -30,8 +30,37 @@ CoronaTrace - HTML.zip 파일을 다운 받은 후 압축을 해제하고 프로
 
 <br>
 
+## Step 3. 카카오 지도 API 사용을 위한 앱 키 발급받기
 
-## Step 3. Web Browser 사이트 갱신
+먼저 서버 갱신하기 전, 카카오 지도 API를 사용하기 위한 키를 발급 받습니다.
+
+#### > 1. 카카오 개발자 사이트에 접속합니다
+
+카카오 개발자 사이트 : https://developers.kakao.com
+
+#### > 2. '내 에플리케이션'을 클릭하고 '로그인' 합니다.
+
+![카카오개발자사이트](https://user-images.githubusercontent.com/101550112/175454261-a50ed0db-d6a5-422d-b4d9-f37645013d81.png)
+
+#### > 3.  '애플리케이션 추가하기'를 클릭합니다.
+
+![애플리케이션](https://user-images.githubusercontent.com/101550112/175454492-81e0123d-c24e-4fa1-a69f-34438b4e151f.png)
+
+#### > 4. '앱이름' , '사업자명'을 입력하여 애플리케이션을 추가합니다.
+
+![애플추가하기](https://user-images.githubusercontent.com/101550112/175474198-872d68fe-7380-484f-b38b-aaae6c6c3da0.png)
+
+#### > 5. 사용하는 플랫폼을 등록하고 '사이트 도메인'을 저장합니다
+API를 사용하기 위해 서버를 하나 개설합니다. 그리고 그 서버에서 카카오 API를 사용할 수 있도록 사이트 도메인을 추가해줍니다.
+
+저는 서버를 개설하는데 다음과 같은 사이트에 도움을 받았습니다.
+도움을 받은 사이트 : https://tiiny.host/manage
+
+
+
+<br>
+
+## Step 4. 코드 내에서 Web Browser 사이트 갱신
 
 1. 먼저 다음과 같은 파일 내 HTML을 이용하여 서버를 개설해 줍니다.
 
@@ -41,7 +70,7 @@ CoronaTrace - HTML.zip 파일을 다운 받은 후 압축을 해제하고 프로
 
 ![설명2](https://user-images.githubusercontent.com/101550112/161687817-2450328f-8888-4935-bb03-b9e1fdd15634.png)
 
-## Step 4. 실행
+## Step 5. 실행
 
 Visual Studio 내에서 컨트롤 + F5를 통해 실행합니다.
 
