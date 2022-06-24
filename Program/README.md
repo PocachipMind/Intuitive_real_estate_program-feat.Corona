@@ -60,19 +60,27 @@ API를 사용하기 위해 서버를 하나 개설합니다. 그리고 그 서�
 
 ![앱설정1](https://user-images.githubusercontent.com/101550112/175476912-05a6ba3b-f20c-4b32-9df7-a12ea72d6d81.png)
 
-![앱설정2](https://user-images.githubusercontent.com/101550112/175476915-cdf900cb-cc90-4f69-a781-886cd8f57e45.png)
+![앱설정2](https://user-images.githubusercontent.com/101550112/175477307-79542a04-0b30-4af3-86e1-de6d04e2499a.png)
 
-![앱설정3](https://user-images.githubusercontent.com/101550112/175476895-e7de5a5e-d01a-4ee8-a254-711626afcbef.png)
+![앱설정3](https://user-images.githubusercontent.com/101550112/175477304-5752d68f-e962-47fa-a37e-b9fab3c07184.png)
 
 <br>
 
 ## Step 4. 코드 내에서 Web Browser 사이트 갱신
 
-1. 먼저 다음과 같은 파일 내 HTML을 이용하여 서버를 개설해 줍니다.
+#### 1. 먼저 다음과 같은 파일 내 HTML을 이용하여 서버를 개설해 줍니다.
 
 ![설명](https://user-images.githubusercontent.com/101550112/161687589-cf300305-f89c-4368-ad37-3b2bccde2f39.png)
 
-2. MapWindowVM.cs 코드에서 개설한 서버의 주소를 입력합니다.
+#### 2. 단, 개설할때 HTML에서 지급 받은 인증키를 입력하여 서버를 개설해 줍니다.
+
+![인증키](https://user-images.githubusercontent.com/101550112/175477918-6f386341-c9da-4b71-b405-76c64cd5e22d.png)
+
+인증 키는 Step 3에서의 카카오 개발자 사이트 요약란이나 앱키 란에 있습니다. 인증키는 자바스크립트 키를 이용합니다.
+
+![키](https://user-images.githubusercontent.com/101550112/175478308-8b06a1bf-a3ba-454b-ae61-7a98f99e85cb.png)
+
+#### 3. MapWindowVM.cs 코드에서 개설한 서버의 주소를 입력합니다.
 
 ![설명2](https://user-images.githubusercontent.com/101550112/161687817-2450328f-8888-4935-bb03-b9e1fdd15634.png)
 
