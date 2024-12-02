@@ -42,6 +42,10 @@
 
 <br>
 
+![image](https://github.com/user-attachments/assets/d1906b12-74bb-478a-a95e-c1d9bb694a40)
+
+<br>
+
 ## 실행 화면
 
 ### ※ 자세한 작동기전은 영상을 참고해주세요! ( https://youtu.be/2JbaxIU_uhc )
