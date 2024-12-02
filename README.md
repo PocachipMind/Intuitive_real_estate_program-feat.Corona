@@ -42,7 +42,7 @@
 
 <br>
 
-![image](https://github.com/user-attachments/assets/d1906b12-74bb-478a-a95e-c1d9bb694a40)
+<img src="https://github.com/user-attachments/assets/d1906b12-74bb-478a-a95e-c1d9bb694a40" width="50%" height="50%"/>
 
 <br>
 
